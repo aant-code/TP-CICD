@@ -1,0 +1,14 @@
+name: Getting-startded
+run-name: nootch/getting-started
+on: [push]
+jobs:
+  Deploy project:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🐧 Let's cook mister"
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - run: docker build -t nootch/getting-started .
+      - run: docker login -u nootch -p ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push nootch/getting-started
+      - run: curl
