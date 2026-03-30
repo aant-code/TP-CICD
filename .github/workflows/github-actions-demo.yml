@@ -9,6 +9,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v5
       - run: docker build -t nootch/getting-started .
-      - run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+      - run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
       - run: docker push ${{ secrets.DOCKERHUB_USERNAME }}${{ secrets.DOCKERHUB_PORJECT }}
       - run: curl ${{ secrets.DEPLOY_HOOK }}
