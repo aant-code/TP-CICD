@@ -1,5 +1,5 @@
 name: Getting-startded
-run-name: ${{ secrets.DOCKERHUB_USERNAME }}${{ secrets.DOCKERHUB_PORJECT }}
+run-name: Getting-started
 on: [push]
 jobs:
   Deploy project:
