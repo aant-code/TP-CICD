@@ -14,5 +14,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-      - run: docker push nootch/getting-started
+      - name: Push Docker image to Docker Hub
+         uses: docker/build-push-action@v4
+         with:
+           context: .
+           push: true
+           tags: ${{ secrets.DOCKERHUB_USERNAME }}/getting-started:latest
       - run: curl ${{ secrets.DEPLOY_HOOK }}
