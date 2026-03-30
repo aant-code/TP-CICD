@@ -1,4 +1,4 @@
-name: Getting-startded
+name: Getting-startded toto
 run-name: Getting-started
 on: [push]
 jobs:
