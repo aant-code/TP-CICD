@@ -2,7 +2,7 @@ name: Getting-startded
 run-name: Getting-started
 on: [push]
 jobs:
-  Deploy_ project:
+  Deploy_project:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🐧 Let's cook mister"
